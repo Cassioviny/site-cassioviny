@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viny WebDesign</title>
+    <link rel="icon" type="image/png" href="./img/logo-ET2.png">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="./img/logo-vinyweb3.png" alt="Logo Viny WebDesign"> </a>
+        <nav class="navbar">
+            <a href="#home" style="--i:1" class="active">Inicio</a>
+            <a href="#sobre" style="--i:2">Sobre</a>
+            <a href="#projetos" style="--i:4">Projetos</a>
+            <a href="#contato" style="--i:5">Contato</a>
+        </nav>
+    </header>
+    <main id="home" class="home">
+        <div class="home-content">
+            <h3>Olá, Sou</h3>
+            <h1>Cássio Vínícius</h1>
+            <h3>Eu sou um <span class="text"></span></h3>
+            <p>'Apaixonado por criar experiências digitais modernas, funcionais
+                <br>e visualmente atraentes.
+                <br>Minha especialidade é o desenvolvimento de sites responsivos, criação de interfaces intuitivas (UI)
+                e projetos personalizados que unem design e tecnologia...
+            </p>
+            </p>
+
+            <div class="home-sci">
+                <a href="https://www.facebook.com/cassio.vinicius.494214" style="--i:7"><i class='bx bxl-facebook'></i></a>
+                <a href="https://www.instagram.com/cassio.viny/" style="--i:8"><i class='bx bxl-instagram'></i></a>
+                <a href="https://wa.me/5521969113948" style="--i:9"><i class='bx bxl-whatsapp'></i></a>
+                <a href="https://www.tiktok.com/@cassiovinicius090" style="--i:10"><i class='bx bxl-tiktok'></i></a>
+            </div>
+            <a href="#sobre" class="btn-box">Saiba mais sobre mim</a>
+        </div>
+        </main>
+    <section id="sobre" class="sobre">
+        <div class="sobre-content">
+            <img src="./img/cassio.jpg" alt="Foto de Cassio" class="cassio-sobre">
+            <h1 class="h1-sobre">Cássio Vínícius</h1>
+            <P class="texto-sobre">Olá! Sou Viny WebDesign, desenvolvedor web apaixonado por criar experiências digitais
+                que unem design,
+                desempenho e funcionalidade.
+                <br>
+
+                Estou em constante evolução, aprendendo novas tecnologias e transformando ideias em sites modernos,
+                responsivos e intuitivos. Acredito que cada projeto é uma oportunidade de criar algo único, sempre com
+                foco na qualidade, nos detalhes e na melhor experiência para o usuário.
+                Meu objetivo é desenvolver soluções que ajudem pessoas e empresas a fortalecerem sua presença digital,
+                entregando projetos bem estruturados, rápidos e preparados para crescer junto com seus negócios.
+            </P>
+
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h1 class="projetos-titulos">Meus Projetos</h1>
+        <div class="projetos-caixa">
+
+            <div class="projeto-card">
+                <img src="./img/projeto1.png" alt="Projeto 1" class="projeto-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Loja de Carros</h3>
+                    <p class="paragrafo-projetos">Loja virtual modernas com animaçoes suave e design responsivo para uma
+                        loja de luxo.</p>
+                </div>
+            </div>
+
+            <div class="projeto-card">
+                <img src="./img/projeto2.png" alt="Projeto 2" class="projeto-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Pagina de Viagens</h3>
+                    <p class="paragrafo-projetos">Uma pagina interativa para planejar suas viagens.</p>
+                </div>
+            </div>
+
+            <div class="projeto-card">
+                <img src="./img/projeto3.png" alt="Projeto 3" class="projeto-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Microsoft</h3>
+                    <p class="paragrafo-projetos">pagina da Microsoft criada para conhecimento diversos.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contato" class="contato">
+        <h2 class="contato-titulo">Entre em Contatos</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+
+            <div class="grupo-form">
+                <input placeholder="Seu Nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+            <button type="submit" class="btn-box2">Enviar via WhatsApp</button>
+        </form>
+    </section>
+    <script src="main.js"></script>
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault()
+
+        const nome = document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value;
+        const telefone = '5521969113948'
+        
+        const texto = `Ola! me chamo ${nome}, ${mensagem}`
+        const msgFormatada = encodeURIComponent(texto)
+
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+        console.log(url)
+
+    
+
+        window.open (url, '_blank')
+        }
+
+    </script>
+</body>
+
+</html>

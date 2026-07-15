@@ -1,0 +1,415 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primaria);
+  color: #ededed;
+}
+
+/*cabeçalho*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 15% 0 10%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+/*logo do cabeçalho*/
+.logo img {
+  width: 280px;
+  /* Tamanho da logo */
+  height: auto;
+  display: block;
+}
+
+/*navegaçao pagina principal*/
+.navbar a {
+  display: inline-block;
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: 0.3s;
+  opacity: 0;
+  animation: slideTop 0.5s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+/*cor do texto botao*/
+.navbar a:hover {
+  color: #0ef;
+}
+
+/*configurações da seção inicial parte main*/
+.home {
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  height: 100vh;
+  background: url(Purple\ Illustrated\ Mountain\ Desktop\ Wallpaper.png)
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 70px 10% 0;
+}
+
+/*largura máxima do conteúdo*/
+.home-content {
+  max-width: 600px;
+}
+
+/*movimentação do texto*/
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: 0.7s;
+}
+
+/*h3 texeto que muda*/
+.home-content h3:nth-of-type(2) {
+  margin-bottom: 30px;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 0.7s;
+}
+
+/*h3 texeto que mudar*/
+.home-content h3 span {
+  color: #0ef;
+}
+
+/*h1 ola*/
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: -3px 0;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+}
+
+/*parágrafo da seção inicial*/
+.home-content p {
+  font-size: 20px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1s;
+}
+
+/*redes sociais*/
+.home-sci a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #0ef;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #0ef;
+  text-decoration: none;
+  transition: 0.5s ease;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+
+  margin: 30px 15px 30px 0;
+}
+
+/*efeito hover nos links das redes sociais*/
+.home-sci a:hover {
+  background: #0ef;
+  color: #081b29;
+  box-shadow: 0 0 20px #0ef;
+}
+
+/*botões da seção inicial*/
+.btn-box {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #0ef;
+  border-radius: 40px;
+  font-size: 16px;
+  color: #081b29;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+  box-shadow:
+    0 0 5px #0ef,
+    0 0 25px #0ef;
+}
+
+/*efeito hover no botão*/
+.btn-box:hover {
+  box-shadow:
+    0 0 5px cyan,
+    0 0 25px cyan,
+    0 0 50px cyan,
+    0 0 100px cyan,
+    0 0 200px cyan;
+}
+
+.sobre-content {
+  background: #081b29;
+  color: #ededed;
+  width: 100%;
+  min-height: 100vh;
+  padding: 70px 10% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.h1-sobre {
+  font-size: 2.5rem;
+  color: #0ef;
+  font-weight: bold;
+  margin: 25px 0;
+}
+
+.texto-sobre {
+  font-size: 1rem;
+  color: #ededed;
+  text-align: center;
+  max-width: 800px;
+  margin: 20px;
+  font-weight: inter;
+}
+
+/*seção sobre*/
+.sobre {
+  background: #081b29;
+  color: #ededed;
+  width: 100%;
+  min-height: 100vh;
+  padding: 5px 10% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/*foto do cassio secão sobre*/
+.cassio-sobre {
+  width: 200px;
+  height: 200px;
+  box-shadow: -1px 1px 12px 0px rgba(0, 255, 255, 1);
+  border-radius: 50%;
+  border: 2px solid rgb(255, 255, 255);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  animation: flutuar 5s ease-in-out infinite; 
+}
+
+/*seção projetos*/
+.projetos {
+  padding: 6rem 2rem;
+  background: #081b29;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.projetos-titulos {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 100px;
+  margin-top: 25px;
+}
+.projeto-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 255, 255, 1);
+  transform: translateY(-10px) scale(1.03);
+}
+
+.projeto-card {
+  background: rgb(0, 0, 0);
+  box-shadow: 0 rgba(0, 255, 255, 1);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  overflow: hidden;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.projetos-caixa {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projeto-imagem {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.info-projetos {
+  margin-bottom: 5px;
+}
+
+.caixa-textos-projetos {
+  padding: 1.5rem;
+}
+
+.paragrafo-projetos {
+  color: rgba(266, 232, 240, 0.8);
+  line-height: 1.25rem;
+}
+
+.contato {
+  padding: 6rem 2rem;
+  background: #081b29;
+  color: #ededed;
+  width: 100%;
+  min-height: 80vh;
+}
+
+.contato-titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.formulario-contato {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(266, 232, 240, 0.2);
+  padding: 2rem;
+  border-radius: 16px;
+}
+
+.campo-form {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  color: #ededed;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  outline: none;
+}
+
+.grupo-form {
+  margin-bottom: 1.5rem;
+}
+
+.campo-form:focus {
+  border-color: #0ef;
+  box-shadow: 0 rgba(0, 255, 255, 1);
+}
+
+.btn-box2 {
+  width: 100%;
+  display: inline-block;
+  padding: 12px 28px;
+  background: #0ef;
+  border-radius: 40px;
+  font-size: 16px;
+  color: #081b29;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+  box-shadow:
+    0 0 5px #0ef,
+    0 0 25px #0ef;
+}
+
+.btn-box2:hover {
+  box-shadow:
+    0 0 5px cyan,
+    0 0 25px cyan,
+    0 0 50px cyan,
+    0 0 100px cyan,
+    0 0 200px cyan;
+}
+
+
+@keyframes flutuar {
+  0%, 100% {
+    transform: translateY(0);
+    
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  
+}
+/*animações*/
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideBottom {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
