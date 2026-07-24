@@ -36,6 +36,10 @@ body {
   display: block;
 }
 
+.logo2 img {
+display: none;
+}
+
 /*navegaçao pagina principal*/
 .navbar a {
   display: inline-block;
@@ -68,6 +72,7 @@ body {
   display: flex;
   align-items: center;
   padding: 70px 10% 0;
+
 }
 
 /*largura máxima do conteúdo*/
@@ -412,4 +417,137 @@ body {
     transform: translateY(0px);
     opacity: 1;
   }
+}
+
+/* ===== Tablet ===== */
+@media screen and (max-width: 1000px) {
+  .body {
+    background-color: #081b29;
+  }
+
+  .home {
+
+     background-image: url("imagem-mobile.png");
+     background-color: #081b29;
+  }
+
+   .header {
+        padding: 30px;
+    }
+
+    .logo img {
+        width: 250px; /* diminui a logo */
+        display: block;    
+    }
+
+    .logo2 img {
+        display: none;
+        
+    } 
+
+    .navbar {
+        display
+        gap: 40px;
+    }
+
+    .navbar a {
+        font-size: 18px; /* diminui os nomes */
+
+  }
+
+  /* ===== Celular ===== */
+@media screen and (max-width: 800px) {
+  .body {
+    background-color: #081b29;
+  }
+
+  .home {
+
+     background-image: url("imagem-mobile.png");
+     background-color: #081b29;
+  }
+
+   .header {
+        padding: 30px;
+    }
+
+    .logo img {
+        width: 250px; /* diminui a logo */
+        display: block;    
+    }
+
+    .logo2 img {
+        display: none;
+        
+    } 
+
+    .navbar {
+        display
+        gap: 40px;
+    }
+
+    .navbar a {
+        font-size: 18px; /* diminui os nomes */
+    }
+  }
+
+  /* Celulares */
+@media screen and (max-width: 500px) {
+
+   .body {
+    background-color: #081b29;
+  }
+
+  .home {
+
+     background-image: url("imagem-mobile.png");
+     background-color: #081b29;
+  }
+
+   .header {
+        padding: 20px;
+    }
+
+    .logo2 img {
+        display: block;
+        width: 30px;
+
+    }
+
+    .logo img {
+      display: none;
+    } 
+    .navbar a {
+        font-size: 15px; /* diminui os nomes */    
+  }
+}
+  /* Celulares menores */
+@media screen and (max-width: 422px) {
+
+   .body {
+    background-color: #081b29;
+  }
+
+  .home {
+
+     background-image: url("imagem-mobile.png");
+     background-color: #081b29;
+     align-items: center;
+  }
+
+   .header {
+        padding: 50px;
+        
+
+    }
+
+    .logo {
+      display: none;
+      
+    }
+
+   .navbar a {
+        display: none;
+  }
+
 }
