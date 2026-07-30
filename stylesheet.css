@@ -39,7 +39,9 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 .header.header-hidden {
@@ -54,7 +56,6 @@ body {
   /* Tamanho da logo */
   height: auto;
   display: block;
-  
 }
 
 .logo2 img {
@@ -63,7 +64,9 @@ body {
 
 .logo,
 .logo2 {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .logo.logo-hidden,
@@ -98,13 +101,13 @@ body {
   width: 100%;
   justify-content: space-between;
   height: 100vh;
-  background: url(Purple\ Illustrated\ Mountain\ Desktop\ Wallpaper.png) no-repeat;
+  background: url(Purple\ Illustrated\ Mountain\ Desktop\ Wallpaper.png)
+    no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   padding: 70px 10% 0;
-
 }
 
 /*largura máxima do conteúdo*/
@@ -235,14 +238,14 @@ body {
 }
 
 .h1-sobre {
-  font-size: 2.0rem;
+  font-size: 2rem;
   color: var(--accent-color);
   font-weight: bold;
   margin: 25px 0;
 }
 
 .texto-sobre {
-  font-size: 1.0rem;
+  font-size: 1rem;
   color: #ededed;
   text-align: center;
   max-width: 800px;
@@ -264,88 +267,93 @@ body {
 }
 
 .my_services {
-    padding: 30px;
-    color: white;
+  padding: 30px;
+  color: white;
 }
 
 .my_services ul {
-    display: grid;
-    grid-template-columns: repeat(2, 200px);
-    gap: 40px;
-    align-items: center;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
 }
 
 .my_services ul li {
-    cursor: pointer;
-    border-radius: 6px;
-    position: relative;
-    padding: 10px;
-    display: grid;
-    gap: 5px;
-    text-align: center;
-    max-width: 300px;
-    align-content: center;
-    height: 250px;
-    background-color: #222222;
+  cursor: pointer;
+  border-radius: 6px;
+  position: relative;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 200px;
+  height: 200px;
+  background-color: #222222;
+  box-sizing: border-box;
 }
 
 .my_services ul li i {
-    font-size: 2.7rem;
-    color: var(--accent-color);
-    
+  font-size: 2.7rem;
+  color: var(--accent-color);
 }
 
 .my_services ul li h3 {
-    color: #fff;
-    font-size: 1rem;
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
+  color: #fff;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
 }
 /* paragrafos*/
 .my_services ul li p {
-    color: #707070;
-    font-size: 1.1rem;
+  color: #707070;
+  font-size: 1.1rem;
 }
 /* contorno em cima e baixo*/
 .my_services li::before {
-    content: '';
-    transition: .5s ease-in-out;
-    border-radius: 6px;
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    top: -2px;
-    right: -2px;
-    border-top: 2px solid transparent;
-    border-right: 2px solid transparent;
+  content: "";
+  transition: 0.5s ease-in-out;
+  border-radius: 6px;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
 }
 
 .my_services li::after {
-    content: '';
-    transition: .5s ease-in-out;
-    border-radius: 6px;
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    bottom: -2px;
-    left: -2px;
-    border-bottom: 2px solid transparent;
-    border-left: 2px solid transparent;
+  content: "";
+  transition: 0.5s ease-in-out;
+  border-radius: 6px;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
 }
 
 .my_services li:hover::before {
-    width: 100%;
-    height: 100%;
-    border-top: 2px solid var(--accent-color);
-    border-right: 2px solid var(--accent-color);
+  width: 100%;
+  height: 100%;
+  border-top: 2px solid var(--accent-color);
+  border-right: 2px solid var(--accent-color);
 }
 
 .my_services li:hover::after {
-    width: 100%;
-    height: 100%;
-    border-bottom: 2px solid var(--accent-color);
-    border-left: 2px solid var(--accent-color);
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid var(--accent-color);
+  border-left: 2px solid var(--accent-color);
 }
 
 /*foto do cassio secão sobre*/
@@ -490,19 +498,15 @@ body {
     0 0 200px var(--accent-color);
 }
 
-
 @keyframes flutuar {
-
   0%,
   100% {
     transform: translateY(0);
-
   }
 
   50% {
     transform: translateY(-20px);
   }
-
 }
 
 /*animações*/
@@ -558,449 +562,634 @@ body {
    RESPONSIVIDADE
 ======================================== */
 
-@media screen and (min-width: 1001px) {
+@media screen and (min-width: 1200px) {
+  .header {
+    padding: 20px 6%;
+  }
+  .logo img {
+    width: 230px;
+  }
 
-    .sobre-content {
-        justify-content: space-between;
-        gap: 0;
-    }
+  .navbar a {
+    font-size: 20px;
+    margin-left: 20px;
+  }
+  .home {
+    padding: 70px 6% 0;
+  }
 
-    .sobre-esquerda {
-        flex: 0 0 42%;
-        transform: translateX(-50px);
-    }
+  .home-content {
+    max-width: 550px;
+  }
 
-    .sobre-direita {
-        flex: 0 0 42%;
-        transform: translate(80px, -30px);
-    }
+  .home-content h1 {
+    font-size: 48px;
+  }
 
-    .my_services {
-        padding: 10px;
-    }
+  .sobre-content {
+    justify-content: space-between;
+    gap: 20px;
+    padding-left: 4%;
+    padding-right: 10%;
+  }
+  .home-content h3 {
+    font-size: 27px;
+  }
 
-    .my_services ul {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-    }
+  .home-content p {
+    font-size: 17px;
+  }
+
+  .cassio-sobre {
+    width: 170px;
+    height: 170px;
+  }
+
+  .sobre-direita {
+    flex: 0 0 42%;
+    transform: translate(90px, -10px);
+  }
+  .texto-sobre {
+    font-size: 0.8rem;
+    color: #ededed;
+    text-align: center;
+    max-width: 600px;
+    margin: 2px;
+    font-weight: 600;
+  }
+
+  .my_services {
+    padding: 12px;
+  }
+
+  .my_services ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .my_services ul li {
+    width: 100%;
+    min-height: 190px;
+    height: 190px;
+    padding: 15px 11px;
+    gap: 7px;
+  }
+
+  .my_services ul li i {
+    font-size: 1.9rem;
+  }
+
+  .my_services ul li h3 {
+    font-size: 0.95rem;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  .my_services ul li p {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .projetos {
+    padding: 5rem 2rem 3.4rem;
+  }
+
+  .projetos-titulos {
+    font-size: 2.5rem;
+    margin-bottom: 32px;
+    margin-top: 24px;
+  }
+
+  .projetos-caixa {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1000px;
+  }
+
+  .projeto-card {
+    border-radius: 10px;
+  }
+
+  .projeto-imagem {
+    height: 150px;
+  }
+
+  .caixa-textos-projetos {
+    padding: 1rem;
+  }
+
+  .info-projetos {
+    font-size: 0.96rem;
+    margin-bottom: 4px;
+  }
+
+  .paragrafo-projetos {
+    font-size: 0.84rem;
+    line-height: 1.08rem;
+  }
+
+  .contato {
+    padding: 4.5rem 2rem;
+  }
+
+  .contato-titulo {
+    font-size: 2.2rem;
+    margin-bottom: 32px;
+  }
+
+  .formulario-contato {
+    max-width: 520px;
+    padding: 1.4rem;
+  }
+
+  .campo-form {
+    padding: 0.85rem;
+  }
+
+  .grupo-form {
+    margin-bottom: 1rem;
+  }
+
+  .btn-box2 {
+    padding: 10px 24px;
+    font-size: 15px;
+  }
 }
 
 /* TABLET */
 @media screen and (max-width: 1000px) {
-
-   body {
+  body {
     background-color: #081b29;
   }
 
-    .header {
-        padding: 20px 6%;
-    }
+  .header {
+    padding: 20px 6%;
+  }
 
-    .logo img {
-        width: 220px;
-    }
+  .logo img {
+    width: 220px;
+  }
 
-    .navbar a {
-        font-size: 18px;
-        margin-left: 20px;
-    }
+  .navbar a {
+    font-size: 18px;
+    margin-left: 20px;
+  }
 
-    .home {
-        padding: 70px 6% 0;
-    }
+  .home {
+    padding: 70px 6% 0;
+  }
 
-    .home-content {
-        max-width: 550px;
-    }
+  .home-content {
+    max-width: 550px;
+  }
 
-    .home-content h1 {
-        font-size: 48px;
-    }
+  .home-content h1 {
+    font-size: 48px;
+  }
 
-    .home-content h3 {
-        font-size: 27px;
-    }
+  .home-content h3 {
+    font-size: 27px;
+  }
 
-    .home-content p {
-        font-size: 17px;
-    }
+  .home-content p {
+    font-size: 17px;
+  }
 
-    .sobre-content {
-        flex-direction: column;
-        padding: 60px 6%;
-        gap: 30px;
-    }
+  .sobre-content {
+    flex-direction: column;
+    padding: 60px 6%;
+    gap: 30px;
+  }
 
-    .sobre-esquerda,
-    .sobre-direita {
-        width: 100%;
-    }
+  .sobre-esquerda,
+  .sobre-direita {
+    width: 100%;
+  }
 
-    .my_services {
-        width: 100%;
-    }
+  .my_services {
+    width: 100%;
+    padding: 0;
+  }
 
-    .texto-sobre {
-        transform: none;
-        max-width: 800px;
-        margin: 0 auto;
-    }
+  .my_services ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
 
-    .h1-sobre {
-        transform: none;
-    }
+  .my_services ul li {
+    width: 100%;
+    min-height: 180px;
+    height: 180px;
+    padding: 14px 10px;
+    gap: 6px;
+  }
 
-    .cassio-sobre {
-        margin: 0 auto 15px;
-    }
+  .my_services ul li i {
+    font-size: 1.8rem;
+  }
 
-    .projetos-caixa {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .my_services ul li h3 {
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .my_services ul li p {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .texto-sobre {
+    transform: none;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .h1-sobre {
+    transform: none;
+  }
+
+  .cassio-sobre {
+    margin: 0 auto 15px;
+  }
+
+  .projetos {
+    padding: 4rem 2rem 3rem;
+  }
+
+  .projetos-titulos {
+    font-size: 2.2rem;
+    margin-bottom: 28px;
+    margin-top: 20px;
+  }
+
+  .projetos-caixa {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    max-width: 780px;
+  }
+
+  .projeto-card {
+    border-radius: 10px;
+  }
+
+  .projeto-imagem {
+    height: 140px;
+  }
+
+  .caixa-textos-projetos {
+    padding: 0.8rem;
+  }
+
+  .info-projetos {
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+  }
+
+  .paragrafo-projetos {
+    font-size: 0.8rem;
+    line-height: 1rem;
+  }
 }
-
 
 /* CELULAR */
 @media screen and (max-width: 700px) {
+  .header {
+    padding: 15px 20px;
+  }
 
-    .header {
-        padding: 15px 20px;
-    }
+  .logo img {
+    width: 270px;
+  }
 
-    .logo img {
-        width: 270px;
-    }
+  .logo2 img {
+    display: none;
+  }
 
-    .logo2 img {
-        display: none;
-    }
+  .navbar {
+    display: flex;
+    gap: 10px;
+  }
 
-    .navbar {
-        display: flex;
-        gap: 10px;
-    }
+  .navbar a {
+    font-size: 14px;
+    margin-left: 0;
+  }
 
-    .navbar a {
-        font-size: 14px;
-        margin-left: 0;
-    }
+  .home {
+    background-image: url("imagem-mobile.png");
+    padding: 100px 20px 40px;
+    text-align: center;
+  }
 
-    .home {
-        background-image: url("imagem-mobile.png");
-        padding: 100px 20px 40px;
-        text-align: center;
-    }
+  .home-content {
+    max-width: 100%;
+  }
 
-    .home-content {
-        max-width: 100%;
-    }
+  .home-content h1 {
+    font-size: 36px;
+  }
 
-    .home-content h1 {
-        font-size: 36px;
-    }
+  .home-content h3 {
+    font-size: 21px;
+  }
 
-    .home-content h3 {
-        font-size: 21px;
-    }
+  .home-content p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
 
-    .home-content p {
-        font-size: 15px;
-        line-height: 1.6;
-    }
+  .home-content p br {
+    display: none;
+  }
 
-    .home-content p br {
-        display: none;
-    }
+  .home-sci {
+    display: flex;
+    justify-content: center;
+  }
 
-    .home-sci {
-        display: flex;
-        justify-content: center;
-    }
+  .home-sci a {
+    width: 38px;
+    height: 38px;
+    margin: 25px 7px;
+  }
 
-    .home-sci a {
-        width: 38px;
-        height: 38px;
-        margin: 25px 7px;
-    }
+  .btn-box {
+    font-size: 14px;
+    padding: 11px 22px;
+  }
 
-    .btn-box {
-        font-size: 14px;
-        padding: 11px 22px;
-    }
+  /* SOBRE */
 
-    /* SOBRE */
+  .sobre-content {
+    padding: 50px 20px;
+    gap: 20px;
+  }
 
-    .sobre-content {
-        padding: 50px 20px;
-        gap: 20px;
-    }
+  .cassio-sobre {
+    width: 100px;
+    height: 100px;
+  }
 
-    .cassio-sobre {
-        width: 100px;
-        height: 100px;
-    }
+  .h1-sobre {
+    font-size: 1.8rem;
+  }
 
-    .h1-sobre {
-        font-size: 1.8rem;
-    }
+  .texto-sobre {
+    font-size: 0.95rem;
+    padding: 0;
+    text-align: center;
+  }
 
-    .texto-sobre {
-        font-size: 0.95rem;
-        padding: 0;
-        text-align: center;
-    }
+  .my_services {
+    padding: 10px;
+  }
 
-    .my_services {
-        padding: 10px;
-    }
+  .my_services ul {
+    gap: 12px;
+  }
 
-    .my_services ul {
-        gap: 12px;
-    }
+  .my_services ul li {
+    width: 140px;
+    height: 140px;
+  }
 
-    .my_services ul li {
-        width: 140px;
-        height: 140px;
-    }
+  .my_services ul li h3 {
+    font-size: 1.2rem;
+  }
 
-    .my_services ul li h3 {
-        font-size: 1.2rem;
-    }
+  .my_services ul li p {
+    font-size: 0.85rem;
+  }
 
-    .my_services ul li p {
-        font-size: 0.85rem;
-    }
+  /* PROJETOS */
 
-    /* PROJETOS */
+  .projetos {
+    padding: 4rem 20px;
+  }
 
-    .projetos {
-        padding: 4rem 20px;
-    }
+  .projetos-titulos {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
 
-    .projetos-titulos {
-        font-size: 2rem;
-        margin-bottom: 30px;
-    }
+  .projetos-caixa {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 
-    .projetos-caixa {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+  .projeto-imagem {
+    height: 190px;
+  }
 
-    .projeto-imagem {
-        height: 190px;
-    }
+  /* CONTATO */
 
-    /* CONTATO */
+  .contato {
+    padding: 4rem 20px;
+  }
 
-    .contato {
-        padding: 4rem 20px;
-    }
+  .contato-titulo {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
 
-    .contato-titulo {
-        font-size: 2rem;
-        margin-bottom: 30px;
-    }
-
-    .formulario-contato {
-        padding: 1.2rem;
-    }
+  .formulario-contato {
+    padding: 1.2rem;
+  }
 }
-
 
 /* MENU E LOGO EMPILHADOS */
 @media screen and (max-width: 700px) {
+  .header {
+    padding: 15px 20px;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
 
-    .header {
-        padding: 15px 20px;
-        justify-content: center;
-        flex-direction: column-reverse;
-    }
+  .logo {
+    display: block;
+  }
 
-    .logo {
-        display: block;
-    }
+  .logo img {
+    width: 220px;
+    margin-top: 12px;
+  }
 
-    .logo img {
-        width: 220px;
-        margin-top: 12px;
-    }
+  .logo2 {
+    display: none;
+  }
 
-    .logo2 {
-        display: none;
-    }
+  .navbar {
+    justify-content: center;
+  }
 
-    .navbar {
-        justify-content: center;
-    }
+  .navbar a {
+    font-size: 20px;
+  }
 
-    .navbar a {
-        font-size: 20px;
-    }
-
-    .home {
-        padding-top: 160px;
-    }
+  .home {
+    padding-top: 160px;
+  }
 }
-
 
 /* AJUSTE DO MENU EM TELAS MUITO ESTREITAS */
 @media screen and (max-width: 400px) {
+  .navbar {
+    gap: 8px;
+  }
 
-    .navbar {
-        gap: 8px;
-    }
-
-    .navbar a {
-        font-size: 14px;
-    }
+  .navbar a {
+    font-size: 14px;
+  }
 }
-
 
 /* CELULAR PEQUENO */
 @media screen and (max-width: 430px) {
+  .header {
+    padding: 15px 10px;
+  }
 
-    .header {
-        padding: 15px 10px;
-    }
+  .navbar {
+    gap: 30px;
+  }
 
-    .navbar {
-        gap: 30px;
-    }
+  .navbar a {
+    font-size: 18px;
+  }
 
-    .navbar a {
-        font-size: 18px;
-    }
+  .home {
+    padding: 100px 15px 40px;
+  }
 
-    .home {
-        padding: 100px 15px 40px;
-    }
+  .home-content h1 {
+    font-size: 30px;
+  }
 
-    .home-content h1 {
-        font-size: 30px;
-    }
+  .home-content h3 {
+    font-size: 18px;
+  }
 
-    .home-content h3 {
-        font-size: 18px;
-    }
+  .home-content p {
+    font-size: 14px;
+  }
 
-    .home-content p {
-        font-size: 14px;
-    }
+  .home-sci a {
+    width: 35px;
+    height: 35px;
+    font-size: 17px;
+    margin: 20px 5px;
+  }
 
-    .home-sci a {
-        width: 35px;
-        height: 35px;
-        font-size: 17px;
-        margin: 20px 5px;
-    }
+  .sobre {
+    padding: 0 15px;
+  }
 
-    .sobre {
-        padding: 0 15px;
-    }
+  .sobre-content {
+    padding: 20px 10px 0;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .sobre-content {
-        padding: 20px 10px 0;
-        gap: 16px;
-        align-items: center;
-        justify-content: center;
-    }
+  .sobre-esquerda,
+  .sobre-direita {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
-    .sobre-esquerda,
-    .sobre-direita {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
+  .sobre-esquerda {
+    transform: none;
+    margin-top: 20px;
+  }
 
-    .sobre-esquerda {
-        transform: none;
-        margin-top: 20px;
-    }
+  .cassio-sobre {
+    margin-top: 10px;
+  }
 
-    .cassio-sobre {
-        margin-top: 10px;
-    }
+  .h1-sobre {
+    font-size: 1.5rem;
+    margin: 12px 0 8px;
+  }
 
-    .h1-sobre {
-        font-size: 1.5rem;
-        margin: 12px 0 8px;
-    }
+  .texto-sobre {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0 auto 8px;
+    max-width: 100%;
+  }
 
-    .texto-sobre {
-        font-size: 0.9rem;
-        line-height: 1.4;
-        margin: 0 auto 8px;
-        max-width: 100%;
-    }
+  .my_services ul {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
 
-    .my_services ul {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        width: 100%;
-    }
+  .my_services ul li {
+    width: 100%;
+    max-width: 150px;
+    min-height: 130px;
+    height: auto;
+    padding: 10px 8px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
 
-    .my_services ul li {
-        width: 100%;
-        max-width: 150px;
-        min-height: 130px;
-        height: auto;
-        padding: 10px 8px;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-    }
+  .my_services ul li i {
+    font-size: 1.7rem;
+    margin-bottom: 4px;
+  }
 
-    .my_services ul li i {
-        font-size: 1.7rem;
-        margin-bottom: 4px;
-    }
+  .my_services ul li h3 {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
 
-    .my_services ul li h3 {
-        font-size: 1rem;
-        line-height: 1.2;
-    }
+  .my_services ul li p {
+    font-size: 0.78rem;
+    line-height: 1.2;
+  }
 
-    .my_services ul li p {
-        font-size: 0.78rem;
-        line-height: 1.2;
-    }
+  .projetos {
+    padding: 3rem 15px;
+  }
 
-    .projetos {
-        padding: 3rem 15px;
-    }
+  .projetos-titulos {
+    font-size: 1.7rem;
+    margin-bottom: 24px;
+  }
 
-    .projetos-titulos {
-        font-size: 1.7rem;
-        margin-bottom: 24px;
-    }
+  .projetos-caixa {
+    gap: 14px;
+  }
 
-    .projetos-caixa {
-        gap: 14px;
-    }
+  .projeto-card {
+    border-radius: 12px;
+  }
 
-    .projeto-card {
-        border-radius: 12px;
-    }
+  .projeto-imagem {
+    height: 150px;
+  }
 
-    .projeto-imagem {
-        height: 150px;
-    }
+  .caixa-textos-projetos {
+    padding: 1rem;
+  }
 
-    .caixa-textos-projetos {
-        padding: 1rem;
-    }
+  .info-projetos {
+    font-size: 1rem;
+  }
 
-    .info-projetos {
-        font-size: 1rem;
-    }
-
-    .paragrafo-projetos {
-        font-size: 0.85rem;
-        line-height: 1.1rem;
-    }
+  .paragrafo-projetos {
+    font-size: 0.85rem;
+    line-height: 1.1rem;
+  }
 }
-
-
