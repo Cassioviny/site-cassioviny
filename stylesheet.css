@@ -2,15 +2,28 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "poppins", sans-serif;
+  font-family: "Inter", sans-serif;
+}
+
+a,
+button,
+input[type="button"],
+input[type="submit"],
+[role="button"],
+[onclick] {
+  cursor: pointer;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --accent-color: rgba(0, 255, 255, 1);
+}
+
 body {
-  background-color: var(--primaria);
+  background-color: #081b29;
   color: #ededed;
 }
 
@@ -26,6 +39,13 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.header.header-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
 }
 
 /*logo do cabeçalho*/
@@ -39,6 +59,18 @@ body {
 
 .logo2 img {
   display: none;
+}
+
+.logo,
+.logo2 {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.logo.logo-hidden,
+.logo2.logo-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px);
 }
 
 /*navegaçao pagina principal*/
@@ -57,7 +89,7 @@ body {
 
 /*cor do texto botao*/
 .navbar a:hover {
-  color: #0ef;
+  color: var(--accent-color);
 }
 
 /*configurações da seção inicial parte main*/
@@ -98,7 +130,7 @@ body {
 
 /*h3 texeto que mudar*/
 .home-content h3 span {
-  color: #0ef;
+  color: var(--accent-color);
 }
 
 /*h1 ola*/
@@ -127,10 +159,10 @@ body {
   width: 40px;
   height: 40px;
   background: transparent;
-  border: 2px solid #0ef;
+  border: 2px solid var(--accent-color);
   border-radius: 50%;
   font-size: 20px;
-  color: #0ef;
+  color: var(--accent-color);
   text-decoration: none;
   transition: 0.5s ease;
   opacity: 0;
@@ -142,16 +174,16 @@ body {
 
 /*efeito hover nos links das redes sociais*/
 .home-sci a:hover {
-  background: #0ef;
+  background: var(--accent-color);
   color: #081b29;
-  box-shadow: 0 0 25px #0ef;
+  box-shadow: 0 0 25px var(--accent-color);
 }
 
 /*botões da seção inicial*/
 .btn-box {
   display: inline-block;
   padding: 12px 28px;
-  background: #0ef;
+  background: var(--accent-color);
   border-radius: 40px;
   font-size: 16px;
   color: #081b29;
@@ -162,18 +194,18 @@ body {
   animation: slideTop 1s ease forwards;
   animation-delay: 2s;
   box-shadow:
-    0 0 5px #0ef,
-    0 0 25px #0ef;
+    0 0 5px var(--accent-color),
+    0 0 25px var(--accent-color);
 }
 
 /*efeito hover no botão*/
 .btn-box:hover {
   box-shadow:
-    0 0 5px cyan,
-    0 0 25px cyan,
-    0 0 50px cyan,
-    0 0 100px cyan,
-    0 0 200px cyan;
+    0 0 5px var(--accent-color),
+    0 0 25px var(--accent-color),
+    0 0 50px var(--accent-color),
+    0 0 100px var(--accent-color),
+    0 0 200px var(--accent-color);
 }
 
 .sobre-content {
@@ -185,23 +217,37 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
+  gap: 60px;
+}
+
+.sobre-esquerda,
+.sobre-direita {
+  width: 100%;
+}
+
+.sobre-esquerda {
+  transform: translateX(-50px);
+  display: flex;
+  align-items: center;
   flex-direction: column;
+  text-align: center;
 }
 
 .h1-sobre {
   font-size: 2.0rem;
-  color: #0ef;
+  color: var(--accent-color);
   font-weight: bold;
   margin: 25px 0;
 }
 
 .texto-sobre {
-  font-size: 0.8rem;
+  font-size: 1.0rem;
   color: #ededed;
   text-align: center;
   max-width: 800px;
-  margin: 6px;
-  font-weight: inter;
+  margin: 8px;
+  font-weight: 600;
 }
 
 /*seção sobre*/
@@ -217,22 +263,15 @@ body {
   flex-direction: column;
 }
 
-.services {
-    margin-top: -30px;
-    padding: 60px;
-    background-color: #151515;
-}
-
-
 .my_services {
     padding: 30px;
     color: white;
 }
 
 .my_services ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    gap: 40px;
     align-items: center;
     justify-content: center;
 }
@@ -245,21 +284,22 @@ body {
     display: grid;
     gap: 5px;
     text-align: center;
-    max-width: 160px;
+    max-width: 300px;
     align-content: center;
-    height: 160px;
+    height: 250px;
     background-color: #222222;
 }
 
 .my_services ul li i {
     font-size: 2.7rem;
-    color: #0ef;
+    color: var(--accent-color);
+    
 }
 
 .my_services ul li h3 {
     color: #fff;
-    font-size: 1.6rem;
-    font-family: 'poppins';
+    font-size: 1rem;
+    font-family: "Inter", sans-serif;
     font-weight: 500;
 }
 /* paragrafos*/
@@ -297,27 +337,24 @@ body {
 .my_services li:hover::before {
     width: 100%;
     height: 100%;
-    border-top: 2px solid #0ef;
-    border-right: 2px solid #0ef;
+    border-top: 2px solid var(--accent-color);
+    border-right: 2px solid var(--accent-color);
 }
 
 .my_services li:hover::after {
     width: 100%;
     height: 100%;
-    border-bottom: 2px solid #0ef;
-    border-left: 2px solid #0ef;
+    border-bottom: 2px solid var(--accent-color);
+    border-left: 2px solid var(--accent-color);
 }
 
 /*foto do cassio secão sobre*/
 .cassio-sobre {
-  width: 90px;
-  height: 90px;
-  box-shadow: -1px 1px 12px 0px rgba(0, 255, 255, 1);
+  width: 200px;
+  height: 200px;
+  box-shadow: -1px 1px 12px 0px var(--accent-color);
   border-radius: 50%;
-  border: 2px solid rgba(0, 255, 255, 1);
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  border: 2px solid var(--accent-color);
   animation: flutuar 5s ease-in-out infinite;
 }
 
@@ -334,16 +371,17 @@ body {
   font-size: 3rem;
   margin-bottom: 100px;
   margin-top: 25px;
+  color: var(--accent-color);
 }
 
 .projeto-card:hover {
-  box-shadow: 0 10px 20px rgba(0, 255, 255, 1);
+  box-shadow: 0 10px 20px var(--accent-color);
   transform: translateY(-10px) scale(1.03);
 }
 
 .projeto-card {
   background: rgb(0, 0, 0);
-  box-shadow: 0 rgba(0, 255, 255, 1);
+  box-shadow: 0 0 0 var(--accent-color);
   border-radius: 16px;
   backdrop-filter: blur(5px);
   border: 1px solid rgba(0, 255, 255, 0.2);
@@ -391,6 +429,7 @@ body {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 50px;
+  color: var(--accent-color);
 }
 
 .formulario-contato {
@@ -418,15 +457,15 @@ body {
 }
 
 .campo-form:focus {
-  border-color: #0ef;
-  box-shadow: 0 rgba(0, 255, 255, 1);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-color);
 }
 
 .btn-box2 {
   width: 100%;
   display: inline-block;
   padding: 12px 28px;
-  background: #0ef;
+  background: var(--accent-color);
   border-radius: 40px;
   font-size: 16px;
   color: #081b29;
@@ -438,17 +477,17 @@ body {
   animation: slideTop 1s ease forwards;
   animation-delay: 2s;
   box-shadow:
-    0 0 5px #0ef,
-    0 0 25px #0ef;
+    0 0 5px var(--accent-color),
+    0 0 25px var(--accent-color);
 }
 
 .btn-box2:hover {
   box-shadow:
-    0 0 5px cyan,
-    0 0 25px cyan,
-    0 0 50px cyan,
-    0 0 100px cyan,
-    0 0 200px cyan;
+    0 0 5px var(--accent-color),
+    0 0 25px var(--accent-color),
+    0 0 50px var(--accent-color),
+    0 0 100px var(--accent-color),
+    0 0 200px var(--accent-color);
 }
 
 
@@ -515,234 +554,453 @@ body {
   }
 }
 
-@media screen and (max-width: 1000px) {
-  .body {
-    background-color: #081b29;
-  }
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
 
-  .home {
+@media screen and (min-width: 1001px) {
 
-    background-image: url("imagem-mobile.png");
-    background-color: #081b29;
-  }
-
-  .header {
-    padding: 30px;
-  }
-
-  .logo img {
-    width: 250px;
-    /* diminui a logo */
-    display: block;
-  }
-
-  .logo2 img {
-    display: none;
-
-  }
-
-  .navbar {
-    display gap: 40px;
-  }
-
-  .navbar a {
-    font-size: 18px;
-    /* diminui os nomes */
-
-  }
-
-
-/* ===== Tablet ===== */
-@media screen and (max-width: 1000px) {
-  .body {
-    background-color: #081b29;
-  }
-
-  .home {
-
-    background-image: url("imagem-mobile.png");
-    background-color: #081b29;
-  }
-
-  .header {
-    padding: 30px;
-  }
-
-  .logo img {
-    width: 250px;
-    /* diminui a logo */
-    display: block;
-  }
-
-  .logo2 img {
-    display: none;
-
-  }
-
-  .navbar {
-    display gap: 40px;
-  }
-
-  .navbar a {
-    font-size: 18px;
-    /* diminui os nomes */
-
-  }
-
-  /* ===== Celular ===== */
-  @media screen and (max-width: 800px) {
-    .body {
-      background-color: #081b29;
+    .sobre-content {
+        justify-content: space-between;
+        gap: 0;
     }
 
-    .home {
-
-      background-image: url("imagem-mobile.png");
-      background-color: #081b29;
+    .sobre-esquerda {
+        flex: 0 0 42%;
+        transform: translateX(-50px);
     }
+
+    .sobre-direita {
+        flex: 0 0 42%;
+        transform: translate(80px, -30px);
+    }
+
+    .my_services {
+        padding: 10px;
+    }
+
+    .my_services ul {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
+
+/* TABLET */
+@media screen and (max-width: 1000px) {
+
+   body {
+    background-color: #081b29;
+  }
 
     .header {
-      padding: 30px;
+        padding: 20px 6%;
     }
 
     .logo img {
-      width: 250px;
-      /* diminui a logo */
-      display: block;
-    }
-
-    .logo2 img {
-      display: none;
-
-    }
-
-    .navbar {
-      display gap: 40px;
+        width: 220px;
     }
 
     .navbar a {
-      font-size: 18px;
-      /* diminui os nomes */
-    }
-  }
-
-  /* Celulares */
-  @media screen and (max-width: 500px) {
-
-    .body {
-      background-color: #081b29;
+        font-size: 18px;
+        margin-left: 20px;
     }
 
     .home {
-
-      background-image: url("imagem-mobile.png");
-      background-color: #081b29;
-    }
-
-    .header {
-      padding: 20px;
-    }
-
-    .logo2 img {
-      display: block;
-      width: 30px;
-
-    }
-
-    .logo img {
-      display: none;
-    }
-
-    .navbar a {
-      font-size: 15px;
-      /* diminui os nomes */
-    }
-
-    .h1-sobre {
-      font-size: 2.0rem;
-
+        padding: 70px 6% 0;
     }
 
     .home-content {
-        max-width: 300px;
-      }
+        max-width: 550px;
+    }
 
-      .home-content h3 {
-        font-size: 25px;
-      }
-
-      .home-content h1 {
+    .home-content h1 {
         font-size: 48px;
-      }
-
-      .home-content p {
-        font-size: 20px;
-      }
-
     }
 
-    /* Celulares menores */
-    @media screen and (max-width: 422px) {
+    .home-content h3 {
+        font-size: 27px;
+    }
 
-      .body {
-        background-color: #081b29;
-      }
+    .home-content p {
+        font-size: 17px;
+    }
 
-      .home {
+    .sobre-content {
+        flex-direction: column;
+        padding: 60px 6%;
+        gap: 30px;
+    }
 
+    .sobre-esquerda,
+    .sobre-direita {
+        width: 100%;
+    }
+
+    .my_services {
+        width: 100%;
+    }
+
+    .texto-sobre {
+        transform: none;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .h1-sobre {
+        transform: none;
+    }
+
+    .cassio-sobre {
+        margin: 0 auto 15px;
+    }
+
+    .projetos-caixa {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* CELULAR */
+@media screen and (max-width: 700px) {
+
+    .header {
+        padding: 15px 20px;
+    }
+
+    .logo img {
+        width: 270px;
+    }
+
+    .logo2 img {
+        display: none;
+    }
+
+    .navbar {
+        display: flex;
+        gap: 10px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        margin-left: 0;
+    }
+
+    .home {
         background-image: url("imagem-mobile.png");
-        background-color: #081b29;
-        align-items: center;
-      }
-
-      .header {
-        padding: 20px;
-
-
-      }
-
-      .logo {
-        display: none;
-
-      }
-
-      .navbar a {
-        display: none;
-      }
-
-      .h1-sobre {
-        font-size: 1.5rem;
-
-      }
-
-      .home-content {
-        max-width: 300px;
-      }
-
-      .home-content h3 {
-        font-size: 25px;
-      }
-
-      .home-content h3:nth-of-type(2) {
-        margin-bottom: 15px;
-
-      }
-
-      .home-content h1 {
-        font-size: 45px;
-      }
-
-      .home-content p {
-        font-size: 18px;
-      }
-
-      .home-sci a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  font-size: 20px; 
-  
+        padding: 100px 20px 40px;
+        text-align: center;
     }
-  }
+
+    .home-content {
+        max-width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 36px;
+    }
+
+    .home-content h3 {
+        font-size: 21px;
+    }
+
+    .home-content p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .home-content p br {
+        display: none;
+    }
+
+    .home-sci {
+        display: flex;
+        justify-content: center;
+    }
+
+    .home-sci a {
+        width: 38px;
+        height: 38px;
+        margin: 25px 7px;
+    }
+
+    .btn-box {
+        font-size: 14px;
+        padding: 11px 22px;
+    }
+
+    /* SOBRE */
+
+    .sobre-content {
+        padding: 50px 20px;
+        gap: 20px;
+    }
+
+    .cassio-sobre {
+        width: 100px;
+        height: 100px;
+    }
+
+    .h1-sobre {
+        font-size: 1.8rem;
+    }
+
+    .texto-sobre {
+        font-size: 0.95rem;
+        padding: 0;
+        text-align: center;
+    }
+
+    .my_services {
+        padding: 10px;
+    }
+
+    .my_services ul {
+        gap: 12px;
+    }
+
+    .my_services ul li {
+        width: 140px;
+        height: 140px;
+    }
+
+    .my_services ul li h3 {
+        font-size: 1.2rem;
+    }
+
+    .my_services ul li p {
+        font-size: 0.85rem;
+    }
+
+    /* PROJETOS */
+
+    .projetos {
+        padding: 4rem 20px;
+    }
+
+    .projetos-titulos {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .projetos-caixa {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .projeto-imagem {
+        height: 190px;
+    }
+
+    /* CONTATO */
+
+    .contato {
+        padding: 4rem 20px;
+    }
+
+    .contato-titulo {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .formulario-contato {
+        padding: 1.2rem;
+    }
+}
+
+
+/* MENU E LOGO EMPILHADOS */
+@media screen and (max-width: 700px) {
+
+    .header {
+        padding: 15px 20px;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+    .logo {
+        display: block;
+    }
+
+    .logo img {
+        width: 220px;
+        margin-top: 12px;
+    }
+
+    .logo2 {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .navbar a {
+        font-size: 20px;
+    }
+
+    .home {
+        padding-top: 160px;
+    }
+}
+
+
+/* AJUSTE DO MENU EM TELAS MUITO ESTREITAS */
+@media screen and (max-width: 400px) {
+
+    .navbar {
+        gap: 8px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+}
+
+
+/* CELULAR PEQUENO */
+@media screen and (max-width: 430px) {
+
+    .header {
+        padding: 15px 10px;
+    }
+
+    .navbar {
+        gap: 30px;
+    }
+
+    .navbar a {
+        font-size: 18px;
+    }
+
+    .home {
+        padding: 100px 15px 40px;
+    }
+
+    .home-content h1 {
+        font-size: 30px;
+    }
+
+    .home-content h3 {
+        font-size: 18px;
+    }
+
+    .home-content p {
+        font-size: 14px;
+    }
+
+    .home-sci a {
+        width: 35px;
+        height: 35px;
+        font-size: 17px;
+        margin: 20px 5px;
+    }
+
+    .sobre {
+        padding: 0 15px;
+    }
+
+    .sobre-content {
+        padding: 20px 10px 0;
+        gap: 16px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sobre-esquerda,
+    .sobre-direita {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .sobre-esquerda {
+        transform: none;
+        margin-top: 20px;
+    }
+
+    .cassio-sobre {
+        margin-top: 10px;
+    }
+
+    .h1-sobre {
+        font-size: 1.5rem;
+        margin: 12px 0 8px;
+    }
+
+    .texto-sobre {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin: 0 auto 8px;
+        max-width: 100%;
+    }
+
+    .my_services ul {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .my_services ul li {
+        width: 100%;
+        max-width: 150px;
+        min-height: 130px;
+        height: auto;
+        padding: 10px 8px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .my_services ul li i {
+        font-size: 1.7rem;
+        margin-bottom: 4px;
+    }
+
+    .my_services ul li h3 {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+
+    .my_services ul li p {
+        font-size: 0.78rem;
+        line-height: 1.2;
+    }
+
+    .projetos {
+        padding: 3rem 15px;
+    }
+
+    .projetos-titulos {
+        font-size: 1.7rem;
+        margin-bottom: 24px;
+    }
+
+    .projetos-caixa {
+        gap: 14px;
+    }
+
+    .projeto-card {
+        border-radius: 12px;
+    }
+
+    .projeto-imagem {
+        height: 150px;
+    }
+
+    .caixa-textos-projetos {
+        padding: 1rem;
+    }
+
+    .info-projetos {
+        font-size: 1rem;
+    }
+
+    .paragrafo-projetos {
+        font-size: 0.85rem;
+        line-height: 1.1rem;
+    }
+}
+
+
