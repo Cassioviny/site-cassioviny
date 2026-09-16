@@ -16,6 +16,7 @@ input[type="submit"],
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 :root {
@@ -25,6 +26,7 @@ html {
 body {
   background-color: #081b29;
   color: #ededed;
+  overflow-x: hidden;
 }
 
 /*cabeçalho*/
@@ -93,6 +95,15 @@ body {
 /*cor do texto botao*/
 .navbar a:hover {
   color: var(--accent-color);
+}
+
+/*botão hamburguer (só aparece no modo mobile)*/
+#menu-icon {
+  display: none;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 101;
 }
 
 /*configurações da seção inicial parte main*/
@@ -383,46 +394,138 @@ body {
 }
 
 .projeto-card:hover {
-  box-shadow: 0 10px 20px var(--accent-color);
-  transform: translateY(-10px) scale(1.03);
+  transform: translateY(-8px);
 }
 
 .projeto-card {
-  background: rgb(0, 0, 0);
-  box-shadow: 0 0 0 var(--accent-color);
-  border-radius: 16px;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  overflow: hidden;
-  transition: all 0.5s ease;
-  cursor: pointer;
+  background: transparent;
+  transition: transform 0.4s ease;
+  text-align: center;
 }
 
 .projetos-caixa {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 3rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.projeto-imagem {
-  height: 200px;
+/*moldura com as duas telas (desktop + celular) de cada projeto*/
+.projeto-telas {
+  position: relative;
   width: 100%;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 78px;
+}
+
+/*moldura do monitor*/
+.moldura-desktop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.tela-desktop {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+  border: 8px solid #f2f2f2;
+  background: #f2f2f2;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.45);
+}
+
+/*pescoço do monitor*/
+.moldura-desktop::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -9%;
+  transform: translateX(-50%);
+  width: 10%;
+  height: 9%;
+  background: #f2f2f2;
+}
+
+/*base/pé do monitor*/
+.moldura-desktop::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -13%;
+  transform: translateX(-50%);
+  width: 32%;
+  height: 4%;
+  border-radius: 6px;
+  background: #f2f2f2;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+/*moldura do celular*/
+.moldura-mobile {
+  position: absolute;
+  right: 4%;
+  bottom: -14%;
+  width: 24%;
+  z-index: 2;
+}
+
+.tela-mobile {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 19;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 20px;
+  border: 5px solid #15151a;
+  background: #15151a;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+/*entalhe (câmera/alto-falante) do celular*/
+.moldura-mobile::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32%;
+  height: 4px;
+  border-radius: 3px;
+  background: #444;
+  z-index: 3;
 }
 
 .info-projetos {
-  margin-bottom: 5px;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
 }
 
-.caixa-textos-projetos {
-  padding: 1.5rem;
+/*botão "Ver site ao vivo"*/
+.btn-projeto {
+  display: inline-block;
+  padding: 10px 26px;
+  background: var(--accent-color);
+  border-radius: 40px;
+  font-size: 0.95rem;
+  color: #081b29;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow:
+    0 0 5px var(--accent-color),
+    0 0 20px var(--accent-color);
+  transition: box-shadow 0.3s ease;
 }
 
-.paragrafo-projetos {
-  color: rgba(266, 232, 240, 0.8);
-  line-height: 1.25rem;
+.btn-projeto:hover {
+  box-shadow:
+    0 0 5px var(--accent-color),
+    0 0 25px var(--accent-color),
+    0 0 50px var(--accent-color);
 }
 
 .contato {
@@ -665,30 +768,13 @@ body {
 
   .projetos-caixa {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    gap: 18px 40px;
     max-width: 1000px;
-  }
-
-  .projeto-card {
-    border-radius: 10px;
-  }
-
-  .projeto-imagem {
-    height: 150px;
-  }
-
-  .caixa-textos-projetos {
-    padding: 1rem;
   }
 
   .info-projetos {
     font-size: 0.96rem;
-    margin-bottom: 4px;
-  }
-
-  .paragrafo-projetos {
-    font-size: 0.84rem;
-    line-height: 1.08rem;
+    margin-bottom: 10px;
   }
 
   .contato {
@@ -740,6 +826,13 @@ body {
 
   .home {
     padding: 70px 6% 0;
+    background-image: linear-gradient(
+        rgba(8, 27, 41, 0.75),
+        rgba(8, 27, 41, 0.88)
+      ),
+      url("Purple Illustrated Mountain Desktop Wallpaper.png");
+    background-size: cover;
+    background-position: center;
   }
 
   .home-content {
@@ -831,30 +924,13 @@ body {
 
   .projetos-caixa {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+    gap: 44px 14px;
     max-width: 780px;
-  }
-
-  .projeto-card {
-    border-radius: 10px;
-  }
-
-  .projeto-imagem {
-    height: 140px;
-  }
-
-  .caixa-textos-projetos {
-    padding: 0.8rem;
   }
 
   .info-projetos {
     font-size: 0.9rem;
-    margin-bottom: 3px;
-  }
-
-  .paragrafo-projetos {
-    font-size: 0.8rem;
-    line-height: 1rem;
+    margin-bottom: 8px;
   }
 }
 
@@ -862,30 +938,52 @@ body {
 @media screen and (max-width: 700px) {
   .header {
     padding: 15px 20px;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .logo img {
-    width: 270px;
+    width: 190px;
   }
 
-  .logo2 img {
+  .logo2 {
     display: none;
   }
 
+  #menu-icon {
+    display: block;
+  }
+
   .navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    max-width: 300px;
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+    background: #081b29;
+    box-shadow: -4px 0 25px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s ease;
+  }
+
+  .navbar.active {
+    right: 0;
   }
 
   .navbar a {
-    font-size: 14px;
+    font-size: 20px;
     margin-left: 0;
   }
 
   .home {
-    background-image: url("imagem-mobile.png");
-    padding: 100px 20px 40px;
+    padding: 120px 20px 40px;
     text-align: center;
+    background-position: 75% center;
   }
 
   .home-content {
@@ -956,8 +1054,8 @@ body {
   }
 
   .my_services ul li {
-    width: 140px;
-    height: 140px;
+    width: 100%;
+    height: 160px;
   }
 
   .my_services ul li h3 {
@@ -981,11 +1079,8 @@ body {
 
   .projetos-caixa {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .projeto-imagem {
-    height: 190px;
+    gap: 50px;
+    max-width: 360px;
   }
 
   /* CONTATO */
@@ -1004,59 +1099,18 @@ body {
   }
 }
 
-/* MENU E LOGO EMPILHADOS */
-@media screen and (max-width: 700px) {
-  .header {
-    padding: 15px 20px;
-    justify-content: center;
-    flex-direction: column-reverse;
-  }
-
-  .logo {
-    display: block;
-  }
-
-  .logo img {
-    width: 220px;
-    margin-top: 12px;
-  }
-
-  .logo2 {
-    display: none;
-  }
-
-  .navbar {
-    justify-content: center;
-  }
-
-  .navbar a {
-    font-size: 20px;
-  }
-
-  .home {
-    padding-top: 160px;
-  }
-}
-
-/* AJUSTE DO MENU EM TELAS MUITO ESTREITAS */
-@media screen and (max-width: 400px) {
-  .navbar {
-    gap: 8px;
-  }
-
-  .navbar a {
-    font-size: 14px;
-  }
-}
-
 /* CELULAR PEQUENO */
 @media screen and (max-width: 430px) {
   .header {
-    padding: 15px 10px;
+    padding: 15px 15px;
+  }
+
+  .logo img {
+    width: 160px;
   }
 
   .navbar {
-    gap: 30px;
+    width: 80%;
   }
 
   .navbar a {
@@ -1064,7 +1118,7 @@ body {
   }
 
   .home {
-    padding: 100px 15px 40px;
+    padding: 110px 15px 40px;
   }
 
   .home-content h1 {
@@ -1169,27 +1223,10 @@ body {
   }
 
   .projetos-caixa {
-    gap: 14px;
-  }
-
-  .projeto-card {
-    border-radius: 12px;
-  }
-
-  .projeto-imagem {
-    height: 150px;
-  }
-
-  .caixa-textos-projetos {
-    padding: 1rem;
+    gap: 40px;
   }
 
   .info-projetos {
     font-size: 1rem;
-  }
-
-  .paragrafo-projetos {
-    font-size: 0.85rem;
-    line-height: 1.1rem;
   }
 }

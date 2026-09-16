@@ -9,7 +9,25 @@ var typed = new Typed(".text", {
 const logos = document.querySelectorAll(".logo, .logo2");
 const header = document.querySelector(".header");
 const sobre = document.querySelector("#sobre");
+const menuIcon = document.getElementById("menu-icon");
+const navbar = document.querySelector(".navbar");
 let temporizadorCabecalho;
+
+function fecharMenu() {
+    navbar.classList.remove("active");
+    menuIcon.classList.remove("bx-x");
+    menuIcon.classList.add("bx-menu");
+}
+
+menuIcon.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+    menuIcon.classList.toggle("bx-menu");
+    menuIcon.classList.toggle("bx-x");
+});
+
+navbar.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", fecharMenu);
+});
 
 function atualizarLogo() {
     const esconderLogo = window.innerWidth <= 1000 && window.scrollY >= sobre.offsetTop - 20;
@@ -19,7 +37,7 @@ function atualizarLogo() {
 function aoRolar() {
     atualizarLogo();
 
-    if (window.innerWidth > 1000) {
+    if (window.innerWidth > 1000 || navbar.classList.contains("active")) {
         header.classList.remove("header-hidden");
         return;
     }
@@ -34,6 +52,10 @@ function aoRolar() {
 window.addEventListener("scroll", aoRolar, { passive: true });
 window.addEventListener("resize", () => {
     atualizarLogo();
+
+    if (window.innerWidth > 700) {
+        fecharMenu();
+    }
 
     if (window.innerWidth > 1000) {
         header.classList.remove("header-hidden");
