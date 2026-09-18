@@ -10,7 +10,6 @@ if (document.querySelector(".text")) {
 
 const logos = document.querySelectorAll(".logo, .logo2");
 const header = document.querySelector(".header");
-const sobre = document.querySelector("#sobre");
 const menuIcon = document.getElementById("menu-icon");
 const navbar = document.querySelector(".navbar");
 let temporizadorCabecalho;
@@ -32,8 +31,7 @@ navbar.querySelectorAll("a").forEach((link) => {
 });
 
 function atualizarLogo() {
-    if (!sobre) return;
-    const esconderLogo = window.innerWidth <= 1000 && window.scrollY >= sobre.offsetTop - 20;
+    const esconderLogo = window.innerWidth <= 1000 && window.scrollY > 20;
     logos.forEach((logo) => logo.classList.toggle("logo-hidden", esconderLogo));
 }
 
