@@ -40,7 +40,7 @@ function atualizarLogo() {
 function aoRolar() {
     atualizarLogo();
 
-    if (window.innerWidth > 1000 || navbar.classList.contains("active")) {
+    if (navbar.classList.contains("active")) {
         header.classList.remove("header-hidden");
         return;
     }
@@ -58,10 +58,6 @@ window.addEventListener("resize", () => {
 
     if (window.innerWidth > 700) {
         fecharMenu();
-    }
-
-    if (window.innerWidth > 1000) {
-        header.classList.remove("header-hidden");
     }
 });
 atualizarLogo();

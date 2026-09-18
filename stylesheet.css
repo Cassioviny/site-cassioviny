@@ -222,166 +222,106 @@ body {
     0 0 200px var(--accent-color);
 }
 
-.sobre-content {
-  background: #081b29;
-  color: #ededed;
-  width: 100%;
-  min-height: 100vh;
-  padding: 70px 10% 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  gap: 60px;
-}
-
-.sobre-esquerda,
-.sobre-direita {
-  width: 100%;
-}
-
-.sobre-esquerda {
-  transform: translateX(-50px);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-.h1-sobre {
-  font-size: 2rem;
-  color: var(--accent-color);
-  font-weight: bold;
-  margin: 25px 0;
-}
-
-.texto-sobre {
-  font-size: 1rem;
-  color: #ededed;
-  text-align: center;
-  max-width: 800px;
-  margin: 8px;
-  font-weight: 600;
-}
-
 /*seção sobre*/
 .sobre {
   background: #081b29;
   color: #ededed;
   width: 100%;
   min-height: 100vh;
-  padding: 5px 10% 0;
+  padding: 140px 10% 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
 
-.my_services {
-  padding: 30px;
-  color: white;
-}
-
-.my_services ul {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  align-items: stretch;
-  justify-content: center;
-  width: 100%;
-  max-width: 620px;
-  margin: 0 auto;
-}
-
-.my_services ul li {
-  cursor: pointer;
-  border-radius: 6px;
-  position: relative;
-  padding: 14px 10px;
+.editorial-sobre {
+  max-width: 780px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
-  width: 100%;
-  min-height: 200px;
-  height: 200px;
-  background-color: #222222;
-  box-sizing: border-box;
+  gap: 26px;
 }
 
-.my_services ul li i {
-  font-size: 2.7rem;
+.editorial-byline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.editorial-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-color);
+}
+
+.editorial-nome {
+  font-size: 14px;
+  color: #9fb4c2;
+}
+
+.editorial-titulo {
+  margin: 0;
+  font-size: 2.4rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #ededed;
+}
+
+.editorial-texto {
+  margin: 0;
+  max-width: 560px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #9fb4c2;
+}
+
+.editorial-stats {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.editorial-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 28px;
+}
+
+.editorial-numero {
+  font-size: 1.8rem;
+  font-weight: 700;
   color: var(--accent-color);
 }
 
-/*card de serviço que funciona como link (ex: Agente de IA)*/
-.my_services ul li a.servico-link {
-  display: contents;
-  color: inherit;
+.editorial-stat-label {
+  font-size: 0.8rem;
+  color: #9fb4c2;
+}
+
+.editorial-divisor {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.editorial-servicos {
+  margin: 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  color: #6d8695;
+}
+
+.editorial-servicos a {
+  color: var(--accent-color);
   text-decoration: none;
 }
 
-.my_services ul li h3 {
-  color: #fff;
-  font-size: 1rem;
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-}
-/* paragrafos*/
-.my_services ul li p {
-  color: #707070;
-  font-size: 1.1rem;
-}
-/* contorno em cima e baixo*/
-.my_services li::before {
-  content: "";
-  transition: 0.5s ease-in-out;
-  border-radius: 6px;
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  border-top: 2px solid transparent;
-  border-right: 2px solid transparent;
-}
-
-.my_services li::after {
-  content: "";
-  transition: 0.5s ease-in-out;
-  border-radius: 6px;
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  bottom: -2px;
-  left: -2px;
-  border-bottom: 2px solid transparent;
-  border-left: 2px solid transparent;
-}
-
-.my_services li:hover::before {
-  width: 100%;
-  height: 100%;
-  border-top: 2px solid var(--accent-color);
-  border-right: 2px solid var(--accent-color);
-}
-
-.my_services li:hover::after {
-  width: 100%;
-  height: 100%;
-  border-bottom: 2px solid var(--accent-color);
-  border-left: 2px solid var(--accent-color);
-}
-
-/*foto do cassio secão sobre*/
-.cassio-sobre {
-  width: 200px;
-  height: 200px;
-  box-shadow: -1px 1px 12px 0px var(--accent-color);
-  border-radius: 50%;
-  border: 2px solid var(--accent-color);
-  animation: flutuar 5s ease-in-out infinite;
+.editorial-servicos a:hover {
+  text-decoration: underline;
 }
 
 /*seção projetos*/
@@ -608,17 +548,6 @@ body {
     0 0 200px var(--accent-color);
 }
 
-@keyframes flutuar {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
 /*animações*/
 @keyframes slideRight {
   0% {
@@ -696,12 +625,6 @@ body {
     font-size: 48px;
   }
 
-  .sobre-content {
-    justify-content: space-between;
-    gap: 20px;
-    padding-left: 4%;
-    padding-right: 10%;
-  }
   .home-content h3 {
     font-size: 27px;
   }
@@ -710,57 +633,8 @@ body {
     font-size: 17px;
   }
 
-  .cassio-sobre {
-    width: 170px;
-    height: 170px;
-  }
-
-  .sobre-direita {
-    flex: 0 0 42%;
-    transform: translate(90px, -10px);
-  }
-  .texto-sobre {
-    font-size: 0.8rem;
-    color: #ededed;
-    text-align: center;
-    max-width: 600px;
-    margin: 2px;
-    font-weight: 600;
-  }
-
-  .my_services {
-    padding: 12px;
-  }
-
-  .my_services ul {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-    max-width: 760px;
-    margin: 0 auto;
-  }
-
-  .my_services ul li {
-    width: 100%;
-    min-height: 190px;
-    height: 190px;
-    padding: 15px 11px;
-    gap: 7px;
-  }
-
-  .my_services ul li i {
-    font-size: 1.9rem;
-  }
-
-  .my_services ul li h3 {
-    font-size: 0.95rem;
-    line-height: 1.15;
-    margin: 0;
-  }
-
-  .my_services ul li p {
-    font-size: 0.8rem;
-    line-height: 1.2;
-    margin: 0;
+  .editorial-titulo {
+    font-size: 2.1rem;
   }
 
   .projetos {
@@ -858,65 +732,12 @@ body {
     font-size: 17px;
   }
 
-  .sobre-content {
-    flex-direction: column;
-    padding: 60px 6%;
-    gap: 30px;
+  .sobre {
+    padding: 120px 6% 60px;
   }
 
-  .sobre-esquerda,
-  .sobre-direita {
-    width: 100%;
-  }
-
-  .my_services {
-    width: 100%;
-    padding: 0;
-  }
-
-  .my_services ul {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .my_services ul li {
-    width: 100%;
-    min-height: 180px;
-    height: 180px;
-    padding: 14px 10px;
-    gap: 6px;
-  }
-
-  .my_services ul li i {
-    font-size: 1.8rem;
-  }
-
-  .my_services ul li h3 {
-    font-size: 0.9rem;
-    line-height: 1.1;
-    margin: 0;
-  }
-
-  .my_services ul li p {
-    font-size: 0.8rem;
-    line-height: 1.2;
-    margin: 0;
-  }
-
-  .texto-sobre {
-    transform: none;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .h1-sobre {
-    transform: none;
-  }
-
-  .cassio-sobre {
-    margin: 0 auto 15px;
+  .editorial-titulo {
+    font-size: 2rem;
   }
 
   .projetos {
@@ -1032,44 +853,41 @@ body {
 
   /* SOBRE */
 
-  .sobre-content {
-    padding: 50px 20px;
+  .sobre {
+    padding: 100px 20px 50px;
+  }
+
+  .editorial-sobre {
     gap: 20px;
   }
 
-  .cassio-sobre {
-    width: 100px;
-    height: 100px;
+  .editorial-avatar {
+    width: 48px;
+    height: 48px;
   }
 
-  .h1-sobre {
-    font-size: 1.8rem;
+  .editorial-titulo {
+    font-size: 1.6rem;
   }
 
-  .texto-sobre {
+  .editorial-texto {
     font-size: 0.95rem;
-    padding: 0;
-    text-align: center;
   }
 
-  .my_services {
-    padding: 10px;
+  .editorial-stats {
+    flex-wrap: wrap;
+    row-gap: 16px;
   }
 
-  .my_services ul {
-    gap: 12px;
+  .editorial-stat {
+    padding: 0 18px;
   }
 
-  .my_services ul li {
-    width: 100%;
-    height: 160px;
+  .editorial-numero {
+    font-size: 1.5rem;
   }
 
-  .my_services ul li h3 {
-    font-size: 1.2rem;
-  }
-
-  .my_services ul li p {
+  .editorial-servicos {
     font-size: 0.85rem;
   }
 
@@ -1148,76 +966,23 @@ body {
   }
 
   .sobre {
-    padding: 0 15px;
+    padding: 90px 15px 40px;
   }
 
-  .sobre-content {
-    padding: 20px 10px 0;
-    gap: 16px;
-    align-items: center;
-    justify-content: center;
+  .editorial-titulo {
+    font-size: 1.4rem;
   }
 
-  .sobre-esquerda,
-  .sobre-direita {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  .editorial-stat {
+    padding: 0 12px;
   }
 
-  .sobre-esquerda {
-    transform: none;
-    margin-top: 20px;
+  .editorial-numero {
+    font-size: 1.3rem;
   }
 
-  .cassio-sobre {
-    margin-top: 10px;
-  }
-
-  .h1-sobre {
-    font-size: 1.5rem;
-    margin: 12px 0 8px;
-  }
-
-  .texto-sobre {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    margin: 0 auto 8px;
-    max-width: 100%;
-  }
-
-  .my_services ul {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .my_services ul li {
-    width: 100%;
-    max-width: 150px;
-    min-height: 130px;
-    height: auto;
-    padding: 10px 8px;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-
-  .my_services ul li i {
-    font-size: 1.7rem;
-    margin-bottom: 4px;
-  }
-
-  .my_services ul li h3 {
-    font-size: 1rem;
-    line-height: 1.2;
-  }
-
-  .my_services ul li p {
-    font-size: 0.78rem;
-    line-height: 1.2;
+  .editorial-servicos {
+    font-size: 0.8rem;
   }
 
   .projetos {
