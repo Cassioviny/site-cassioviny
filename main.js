@@ -1,10 +1,12 @@
-var typed = new Typed(".text", {
-    strings: ["Desenvolvedor Front-end ", "YouTuber", "Desenvolvedor Web"],
-    typeSpeed: 100,
-    backSpeed: 100,
-    backDelay: 1000,
-    loop: true
-});
+if (document.querySelector(".text")) {
+    var typed = new Typed(".text", {
+        strings: ["Desenvolvedor Front-end ", "YouTuber", "Desenvolvedor Web"],
+        typeSpeed: 100,
+        backSpeed: 100,
+        backDelay: 1000,
+        loop: true
+    });
+}
 
 const logos = document.querySelectorAll(".logo, .logo2");
 const header = document.querySelector(".header");
@@ -30,6 +32,7 @@ navbar.querySelectorAll("a").forEach((link) => {
 });
 
 function atualizarLogo() {
+    if (!sobre) return;
     const esconderLogo = window.innerWidth <= 1000 && window.scrollY >= sobre.offsetTop - 20;
     logos.forEach((logo) => logo.classList.toggle("logo-hidden", esconderLogo));
 }
