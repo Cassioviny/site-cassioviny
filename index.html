@@ -57,7 +57,7 @@
                 <a href="https://www.facebook.com/cassio.vinicius.494214" style="--i:7"><i
                         class='bx bxl-facebook'></i></a>
                 <a href="https://www.instagram.com/cassio.viny/" style="--i:8"><i class='bx bxl-instagram'></i></a>
-                <a href="https://wa.me/5521969113948" style="--i:9"><i class='bx bxl-whatsapp'></i></a>
+                <a href="https://wa.me/5521969113948?text=Ol%C3%A1%20C%C3%A1ssio%2C%20vi%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20empresa" style="--i:9"><i class='bx bxl-whatsapp'></i></a>
                 <a href="https://www.tiktok.com/@cassiovinicius090" style="--i:10"><i class='bx bxl-tiktok'></i></a>
             </div>
             <a href="#sobre" class="btn-box">Saiba mais sobre mim</a>
@@ -79,7 +79,7 @@
 
             <div class="editorial-stats">
                 <div class="editorial-stat">
-                    <span class="editorial-numero">2+</span>
+                    <span class="editorial-numero">10+</span>
                     <span class="editorial-stat-label">Projetos entregues</span>
                 </div>
                 <div class="editorial-divisor"></div>
@@ -97,7 +97,7 @@
             <p class="editorial-servicos">Front-end &middot; Web Design &middot; Responsivo &middot; Performance
                 &middot; SEO Básico &middot; Manutenção &middot; <a href="agente-ia.html">Agente de IA</a></p>
 
-            <a href="https://wa.me/5521969113948" target="_blank" rel="noopener" class="btn-box">Vamos conversar
+            <a href="https://wa.me/5521969113948?text=Ol%C3%A1%20C%C3%A1ssio%2C%20vi%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20empresa" target="_blank" rel="noopener" class="btn-box">Vamos conversar
                 no WhatsApp</a>
 
         </div>
@@ -159,6 +159,10 @@
             </div>
 
             <div class="grupo-form">
+                <input placeholder="Seu WhatsApp" class="campo-form" id="whatsapp" type="tel">
+            </div>
+
+            <div class="grupo-form">
                 <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
             </div>
             <button type="submit" class="btn-box2">Enviar via WhatsApp</button>
@@ -170,10 +174,11 @@
             event.preventDefault()
 
             const nome = document.getElementById('nome').value;
+            const whatsapp = document.getElementById('whatsapp').value;
             const mensagem = document.getElementById('mensagem').value;
             const telefone = '5521969113948'
 
-            const texto = `Ola! me chamo ${nome}, ${mensagem}`
+            const texto = `Ola! me chamo ${nome}, meu WhatsApp e ${whatsapp}. ${mensagem}`
             const msgFormatada = encodeURIComponent(texto)
 
             const url = `https://wa.me/${telefone}?text=${msgFormatada}`
