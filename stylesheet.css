@@ -686,6 +686,18 @@ body {
   }
 }
 
+/* Cabecalho: evita quebra do menu entre o breakpoint de 1000px e o de 1200px */
+@media screen and (max-width: 1199px) {
+  .header {
+    padding: 20px 6%;
+  }
+
+  .navbar a {
+    font-size: 18px;
+    margin-left: 20px;
+  }
+}
+
 /* TABLET */
 @media screen and (max-width: 1000px) {
   body {
