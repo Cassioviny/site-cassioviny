@@ -88,8 +88,8 @@ body {
   margin-left: 35px;
   transition: 0.3s;
   opacity: 0;
-  animation: slideTop 0.5s ease forwards;
-  animation-delay: calc(0.2s * var(--i));
+  animation: slideTop 0.4s ease forwards;
+  animation-delay: calc(0.12s * var(--i));
 }
 
 /*cor do texto botao*/
@@ -468,6 +468,8 @@ body {
   justify-content: center;
   gap: 8px;
   margin-bottom: 20px;
+  min-height: 55px;
+  align-content: flex-start;
 }
 
 .badge-tech {
@@ -572,9 +574,6 @@ body {
   letter-spacing: 1px;
   text-decoration: none;
   font-weight: 600;
-  opacity: 0;
-  animation: slideTop 1s ease forwards;
-  animation-delay: 2s;
   box-shadow:
     0 0 5px var(--accent-color),
     0 0 25px var(--accent-color);
@@ -1257,4 +1256,37 @@ body {
   .ia-cta {
     padding: 3rem 20px;
   }
+}
+
+/*botões da página do agente de IA: sem espera de 2s*/
+.ia-hero .btn-box {
+  animation-duration: 0.6s;
+  animation-delay: 0.8s;
+}
+
+.ia-cta .btn-box {
+  opacity: 1;
+  animation: none;
+}
+
+/*menu já animado: aparece pronto ao trocar de página*/
+.navbar.sem-animacao a {
+  opacity: 1;
+  animation: none;
+}
+
+/*troca de página: cabeçalho inteiro (logo + menu) sobe e volta, igual aos links da mesma página*/
+@keyframes headerVolta {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header.header-volta {
+  animation: headerVolta 0.25s ease;
 }

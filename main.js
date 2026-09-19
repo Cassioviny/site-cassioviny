@@ -8,6 +8,17 @@ if (document.querySelector(".text")) {
     });
 }
 
+// menu anima só na 1ª abertura do site; ao trocar de página (ex.: Agente de IA) aparece já pronto
+try {
+    const navInicial = document.querySelector(".navbar");
+    if (sessionStorage.getItem("menuJaAnimado")) {
+        navInicial.classList.add("sem-animacao");
+        document.querySelector(".header").classList.add("header-volta");
+    } else {
+        sessionStorage.setItem("menuJaAnimado", "1");
+    }
+} catch (e) {}
+
 const logos = document.querySelectorAll(".logo, .logo2");
 const header = document.querySelector(".header");
 const menuIcon = document.getElementById("menu-icon");
