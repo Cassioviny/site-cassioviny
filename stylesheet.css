@@ -20,7 +20,7 @@ html {
 }
 
 :root {
-  --accent-color: rgba(0, 255, 255, 1);
+  --accent-color: rgba(30, 155, 255, 1);
 }
 
 body {
@@ -54,7 +54,7 @@ body {
 
 /*logo do cabeçalho*/
 .logo img {
-  width: 170px;
+  width: 210px;
   /* Tamanho da logo */
   height: auto;
   display: block;
@@ -112,7 +112,7 @@ body {
   width: 100%;
   justify-content: space-between;
   height: 100vh;
-  background: url(Purple\ Illustrated\ Mountain\ Desktop\ Wallpaper.png)
+  background: url(wallpaper-azul.jpg)
     no-repeat;
   background-size: cover;
   background-position: center;
@@ -123,7 +123,7 @@ body {
 
 /*largura máxima do conteúdo*/
 .home-content {
-  max-width: min(600px, 42vw);
+  max-width: min(600px, 43vw);
 }
 
 /*movimentação do texto*/
@@ -348,6 +348,14 @@ body {
   background: transparent;
   transition: transform 0.4s ease;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*botão sempre alinhado na base do card*/
+.projeto-card .btn-projeto {
+  margin-top: auto;
 }
 
 .projetos-caixa {
@@ -375,6 +383,8 @@ body {
 
 .tela-desktop {
   display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -462,7 +472,7 @@ body {
 
 .badge-tech {
   padding: 4px 12px;
-  border: 1px solid rgba(0, 255, 255, 0.4);
+  border: 1px solid rgba(30, 155, 255, 0.4);
   border-radius: 20px;
   font-size: 0.75rem;
   color: var(--accent-color);
@@ -637,7 +647,7 @@ body {
     padding: 20px 6%;
   }
   .logo img {
-    width: 140px;
+    width: 210px;
   }
 
   .navbar a {
@@ -649,19 +659,19 @@ body {
   }
 
   .home-content {
-    max-width: min(550px, 42vw);
+    max-width: min(550px, 43vw);
   }
 
   .home-content h1 {
-    font-size: 48px;
+    font-size: 56px;
   }
 
   .home-content h3 {
-    font-size: 27px;
+    font-size: 32px;
   }
 
   .home-content p {
-    font-size: 17px;
+    font-size: 20px;
   }
 
   .editorial-titulo {
@@ -735,7 +745,7 @@ body {
   }
 
   .logo img {
-    width: 135px;
+    width: 165px;
   }
 
   .navbar a {
@@ -749,13 +759,13 @@ body {
         rgba(8, 27, 41, 0.75),
         rgba(8, 27, 41, 0.88)
       ),
-      url("Purple Illustrated Mountain Desktop Wallpaper.png");
+      url("wallpaper-azul.jpg");
     background-size: cover;
     background-position: center;
   }
 
   .home-content {
-    max-width: min(550px, 42vw);
+    max-width: min(550px, 43vw);
   }
 
   .home-content h1 {
@@ -809,7 +819,7 @@ body {
   }
 
   .logo img {
-    width: 115px;
+    width: 145px;
   }
 
   .logo2 {
@@ -969,7 +979,7 @@ body {
   }
 
   .logo img {
-    width: 100px;
+    width: 120px;
   }
 
   .navbar {
