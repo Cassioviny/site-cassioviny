@@ -23,7 +23,6 @@ const logos = document.querySelectorAll(".logo, .logo2");
 const header = document.querySelector(".header");
 const menuIcon = document.getElementById("menu-icon");
 const navbar = document.querySelector(".navbar");
-let temporizadorCabecalho;
 
 function fecharMenu() {
     navbar.classList.remove("active");
@@ -46,20 +45,22 @@ function atualizarLogo() {
     logos.forEach((logo) => logo.classList.toggle("logo-hidden", esconderLogo));
 }
 
+// logo e menu somem enquanto a página está rolada e voltam no topo (ou ao encostar o mouse na borda superior)
 function aoRolar() {
     atualizarLogo();
 
-    if (navbar.classList.contains("active")) {
+    if (navbar.classList.contains("active") || window.scrollY <= 20) {
         header.classList.remove("header-hidden");
         return;
     }
 
     header.classList.add("header-hidden");
-    clearTimeout(temporizadorCabecalho);
-    temporizadorCabecalho = setTimeout(() => {
-        header.classList.remove("header-hidden");
-    }, 250);
 }
+
+window.addEventListener("mousemove", (e) => {
+    if (window.scrollY <= 20) return;
+    header.classList.toggle("header-hidden", e.clientY > 90 && !navbar.classList.contains("active"));
+});
 
 window.addEventListener("scroll", aoRolar, { passive: true });
 window.addEventListener("resize", () => {
