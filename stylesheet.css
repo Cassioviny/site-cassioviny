@@ -524,6 +524,29 @@ body {
 }
 
 /*botão "Ver site ao vivo"*/
+/*tecnologias e depoimento do projeto*/
+.projeto-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.8rem 0;
+}
+
+.projeto-tags span {
+  padding: 0.25rem 0.9rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 2rem;
+  color: var(--accent-color);
+  font-size: 0.9rem;
+}
+
+.projeto-depoimento {
+  font-style: italic;
+  color: #cfd8e0;
+  margin-bottom: 1rem;
+}
+
 .btn-projeto {
   display: inline-block;
   padding: 10px 26px;
